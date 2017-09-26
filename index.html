@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barcode Sample</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <header class="navbar navbar-dark bg-dark mb-3">
+        <a href="#" class="navbar-brand">Barcode Sample</a>
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger invisible" id="myMessage">
+                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Error</h4>
+                    <p>The system detected manual input.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+
+                    <form id="barcodeForm">
+
+                        <div class="form-group">
+                            <label for="inputScan">Barcode</label>
+                            <input type="text" id="inputScan" class="form-control" placeholder="Enter Text Here">
+                            <small class="form-text text-muted">*This input should only allow scan.</small>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+
+                    </form>
+
+            </div>
+
+            <div class="col">
+
+                <ul id="myList">
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div> <!--container-->
+
+    <script src="js/main.js"></script>
+    <script src="https://use.fontawesome.com/fdb225f9ec.js"></script>
+
+</body>
+</html>
