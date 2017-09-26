@@ -11,7 +11,6 @@ document.querySelector("#submitButton").addEventListener("click", () => {
     cleanInput();
 });
 
-// let typing = true;
 let times  = [];
 document.querySelector("#inputScan").addEventListener("keyup", (input) => {
 
@@ -39,34 +38,4 @@ document.querySelector("#inputScan").addEventListener("keyup", (input) => {
 
     }
 
-    // if(typing === true){
-    //     setTimeout(() => {
-
-    //         typing = true;
-    //     }, 500);
-    //     typing = false;
-    // }else{
-    //     typing = true;
-    //     document.querySelector("#myMessage").classList.remove("invisible");
-
-    //     cleanInput();
-
-    //     setTimeout(() => {
-    //         document.querySelector("#myMessage").classList.add("invisible");
-    //     }, 3000);
-    // }
 });
-
-// let verifier = false;
-// setInterval(() => {
-//     if(verifier !== typing){
-//         verifier = typing;
-//         console.log("typing", typing);
-//     }
-// }, 100);
-
-function banana(){
-    let array = ['a', 'b', 'c', 'd', 'e', 'second', 'last'];
-    console.log(array[array.length - 1]);
-    console.log(array[array.length - 2]);
-}
