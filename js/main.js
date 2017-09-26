@@ -1,6 +1,7 @@
 let cleanInput = () => {
     document.querySelector("#inputScan").value = '';
     document.querySelector("#inputScan").focus();
+    times = [];
 }
 
 document.querySelector("#submitButton").addEventListener("click", () => {
@@ -8,62 +9,64 @@ document.querySelector("#submitButton").addEventListener("click", () => {
     newItem.innerHTML = document.querySelector("#inputScan").value;
     document.querySelector("#myList").appendChild(newItem);
     cleanInput();
-    typing = true;
 });
 
-let typing = true;
-let chars  = [];
+// let typing = true;
+let times  = [];
 document.querySelector("#inputScan").addEventListener("keyup", (input) => {
 
-    // let timeouts = []
-
-    if(input.which === 13){
-        input.preventDefault();
-        return;
+    if(times.length === 0){
+        times.push(Date.now());
     }
+    times.push(Date.now());
 
-    if(typing === true){
-        setTimeout(() => {
-            typing = false;
-            console.log("ran");
-        }, 1000);
+    console.log(times.join(' '));
+    console.log("difference ", (times[times.length - 1] - times[times.length - 2]));
+
+    if((times[times.length - 1] - times[times.length - 2]) < 1000){
 
         if(document.querySelector("#inputScan").value.length == 7){
-            // timeouts.forEach((timeout) => {
-            //     console.log("timeout clear");
-            //     clearTimeout(timeout);
-            // });
-
-            // for(let i = 0; i <= timeouts.length; i++){
-            //     console.log("timeout clear");
-            //     clearTimeout(timeouts[i]);
-            // }
            document.querySelector("#submitButton").click();
-           typing = true;
         }
+
     }else{
-        typing = true;
+
         document.querySelector("#myMessage").classList.remove("invisible");
-
         cleanInput();
-
         setTimeout(() => {
             document.querySelector("#myMessage").classList.add("invisible");
         }, 3000);
+
     }
+
+    // if(typing === true){
+    //     setTimeout(() => {
+
+    //         typing = true;
+    //     }, 500);
+    //     typing = false;
+    // }else{
+    //     typing = true;
+    //     document.querySelector("#myMessage").classList.remove("invisible");
+
+    //     cleanInput();
+
+    //     setTimeout(() => {
+    //         document.querySelector("#myMessage").classList.add("invisible");
+    //     }, 3000);
+    // }
 });
 
-function banana(){
-    console.log("1");
-    setTimeout(() => {
-        console.log("2")
-    }, 2000);
-    console.log("3");
-}
+// let verifier = false;
+// setInterval(() => {
+//     if(verifier !== typing){
+//         verifier = typing;
+//         console.log("typing", typing);
+//     }
+// }, 100);
 
-function testArray(){
-    let array = ["1", "2", "chocolate", "3"];
-    array.forEach((element) => {
-        console.log(element);
-    });
+function banana(){
+    let array = ['a', 'b', 'c', 'd', 'e', 'second', 'last'];
+    console.log(array[array.length - 1]);
+    console.log(array[array.length - 2]);
 }
