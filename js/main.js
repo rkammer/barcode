@@ -19,9 +19,6 @@ document.querySelector("#inputScan").addEventListener("keyup", (input) => {
     }
     times.push(Date.now());
 
-    console.log(times.join(' '));
-    console.log("difference ", (times[times.length - 1] - times[times.length - 2]));
-
     if((times[times.length - 1] - times[times.length - 2]) < 100){
 
         if(document.querySelector("#inputScan").value.length == 7){
