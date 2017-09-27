@@ -27,10 +27,14 @@ document.querySelector("#inputScan").addEventListener("keyup", (input) => {
 
     }else{
 
-        document.querySelector("#myMessage").classList.remove("invisible");
+        document.querySelector("#msgError").classList.remove("d-none");
+        document.querySelector("#inputScan").classList.add("is-invalid");
+        document.querySelector("#msgInfo").classList.add("d-none");
         cleanInput();
         setTimeout(() => {
-            document.querySelector("#myMessage").classList.add("invisible");
+            document.querySelector("#msgError").classList.add("d-none");
+            document.querySelector("#inputScan").classList.remove("is-invalid");
+            document.querySelector("#msgInfo").classList.remove("d-none");
         }, 3000);
 
     }

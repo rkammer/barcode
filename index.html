@@ -19,24 +19,16 @@
     <div class="container">
 
         <div class="row">
-            <div class="col">
-                <div class="alert alert-danger invisible" id="myMessage">
-                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Error</h4>
-                    <p>The system detected manual input.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
 
             <div class="col">
 
                     <form id="barcodeForm">
 
                         <div class="form-group">
-                            <label for="inputScan">Barcode</label>
+                            <label for="inputScan"><i class="fa fa-barcode" aria-hidden="true"></i>&nbsp;Barcode</label>
                             <input type="text" id="inputScan" class="form-control" placeholder="Enter Text Here" autofocus>
-                            <small class="form-text text-muted">*This input should only allow scan.</small>
+                            <small class="form-text text-muted"  id="msgInfo"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;This input should only allow scan.</small>
+                            <small class="form-text text-danger d-none" id="msgError"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;The system detected manual input.</small>
                         </div>
 
                         <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
